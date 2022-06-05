@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marlene <marlene@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:23:44 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/05/22 18:52:29 by marlene          ###   ########.fr       */
+/*   Updated: 2022/06/05 18:07:30 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	nb_line_map(char **map_name)
 		nb_line_map++;
 	}
 	close(fd);
-	return(nb_line_map);
+	return (nb_line_map);
 }
 
 void	read_map(t_map *vars, char **map_name)

@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   file_errors.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 22:48:40 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/05 18:07:25 by mthiesso         ###   ########.fr       */
+/*   Created: 2022/05/31 11:57:49 by mthiesso          #+#    #+#             */
+/*   Updated: 2022/05/31 11:58:23 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_close(t_map *vars)
+int	extension_errors(t_map	*vars, char *map_name)
 {
-	mlx_destroy_window(vars->mlx, vars->win);
-	return (0);
-}
+	int	map_len;
 
-int	main(int argc, char **argv)
-{
-	t_map	vars;
-	int		i;
-
-	i = 0;
-	if (argc != 2)
-	{
-		write(1, "NB_ARG_ERROR\n", 7);
-		return (0);
+	map_len = ft_strlen(map_name);
+	if (map_name[map_len - 1] != 'r' || map_name[map_len - 2] != 'e'
+		|| map_name[map_len - 3] != 'b' || map_name[map_len - 4] != '.')
+	{			
+		write(1, "MAP_FILE_ERROR\n", 15);
+		return (EXIT_FAILURE);
 	}
-	read_map(&vars, &argv[1]);
-	check_errors(&vars, argv[1]);
-	//vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-	//mlx_hook(vars.win, 2, 1L << 0, ft_close, &vars);
-	//mlx_loop(vars.mlx);*/
+	return (0);
 }

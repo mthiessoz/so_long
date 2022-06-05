@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:05:15 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/04/23 16:26:00 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:53:02 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		ft_strncmp(char *s1, char *s2, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 int		ft_lstsize(t_list *lst);
 int		nl_finder(char *line);
+int		ft_strichr(const char *s, int c);
 
 char	*ft_strchr(const char *str, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);

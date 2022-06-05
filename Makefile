@@ -6,12 +6,12 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 15:31:22 by mthiesso          #+#    #+#              #
-#    Updated: 2022/04/26 14:34:33 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/06/05 18:57:42 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ----------------- Sources -----------------
-SOLONG				=        main.c parsing_map.c map_errors.c
+SOLONG				=        main.c parsing_map.c map_errors.c file_errors.c check_errors.c check_walls.c
 LIB					=        ./libft/libft.a
 MLXLIB				=        ./mlx/libmlx.a
 LIBFT_MLX			=        $(MAKE) -C libft && $(MAKE) -C mlx
