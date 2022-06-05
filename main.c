@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:48:40 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/05 18:07:25 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:07:00 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_close(t_map *vars)
 
 int	main(int argc, char **argv)
 {
-	t_map	vars;
+	t_map	map;
 	int		i;
 
 	i = 0;
@@ -29,9 +29,11 @@ int	main(int argc, char **argv)
 		write(1, "NB_ARG_ERROR\n", 7);
 		return (0);
 	}
-	read_map(&vars, &argv[1]);
-	check_errors(&vars, argv[1]);
-	//vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-	//mlx_hook(vars.win, 2, 1L << 0, ft_close, &vars);
-	//mlx_loop(vars.mlx);*/
+	read_map(&map, &argv[1]);
+	check_errors(&map, argv[1]);
+	map.mlx = mlx_init();
+	map.win = mlx_new_window(map.mlx, 1920, 1080, "Hello world!");
+	map_load(&map);
+	mlx_hook(map.win, 2, 1L << 0, ft_close, &map);
+	mlx_loop(map.mlx);
 }

@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_walls.c                                      :+:      :+:    :+:   */
+/*   map_loading.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 18:11:02 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/05 22:06:21 by mthiesso         ###   ########.fr       */
+/*   Created: 2022/06/05 22:04:37 by mthiesso          #+#    #+#             */
+/*   Updated: 2022/06/05 23:09:06 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	walls_errors(t_map *vars)
+void	map_load(t_map *map)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = 0;
-	while (j < vars->len_line - 1)
+	map->pingu = malloc(sizeof(t_img));
+	map->pingu->img_path = "asset/pingu.xpm";
+	while (map->tableau[i])
 	{
-		if (vars->tableau[0][j] != '1' ||
-			vars->tableau[vars->nb_line_map - 1][j] != '1')
+		j = 0;
+		while (map->tableau[i][j])
 		{
-			write(1, "WALL_ERROR\n", 12);
-			return (EXIT_FAILURE);
-		}
-		if (vars->tableau[i][0] != '1' ||
-			vars->tableau[i][vars->len_line - 2] != '1')
-		{
-			write(1, "WALLS_ERROR\n", 12);
-			return (EXIT_FAILURE);
-		}
-		if (j < vars->len_line - 1)
+			if (map->tableau[i][j] == '1')
+			{
+				write(1, "TEST\n", 6);
+				mlx_put_image_to_window(map->mlx, map->win, map->pingu->img_name, 0, 0);
+			}
 			j++;
-		if (i < vars->nb_line_map - 1)
-			i++;
+		}
+		i++;
 	}
-	return (0);
 }
