@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 23:43:51 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/05 23:06:57 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/06 14:04:56 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_img
 {
 	void	*img_name;
 	char	*img_path;
+	int		img_width;
+	int		img_height;
 }				t_img;
 
 typedef struct s_map
