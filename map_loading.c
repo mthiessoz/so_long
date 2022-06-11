@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 22:04:37 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/11 12:57:25 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:10:05 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,11 @@ void	what_img(t_map *map, char c, int x, int y)
 	else if (c == '0')
 		mlx_put_image_to_window(map->mlx, map->win, map->snow->img_name, x, y);
 	else if (c == 'P')
+	{
+		map->perso->img_x = x;
+		map->perso->img_y = y;
 		mlx_put_image_to_window(map->mlx, map->win, map->perso->img_name, x, y);
+	}
 	else if (c == 'C')
 		mlx_put_image_to_window(map->mlx, map->win, map->coin->img_name, x, y);
 	else if (c == 'E')

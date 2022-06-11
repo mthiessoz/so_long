@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 23:43:51 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/11 15:29:12 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:29:25 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_map
 }				t_map;
 
 int				read_map(t_map *vars, char **map);
-void			check_errors(t_map *vars, char *tmp);
+int				check_errors(t_map *vars, char *tmp);
 void			map_load(t_map *map);
 int				start_game(t_map *map, char *s);
 void			img_init(t_map *map);
@@ -56,6 +56,7 @@ void			map_init(t_map *map);
 void			exit_game(t_map *map);
 void			create_map(t_map *map);
 void			what_img(t_map *map, char c, int x, int y);
+int				where_to_go(int keycode, t_map *map);
 
 int				nb_line_map(char **map);
 int				extension_errors(t_map *vars, char *map_name);
@@ -64,5 +65,9 @@ int				player_error(t_map *vars);
 int				exit_error(t_map *vars);
 int				rectangle_error(t_map *vars);
 int				walls_errors(t_map *vars);
+int				up_move(t_map *map, int keycode);
+int				left_move(t_map *map, int keycode);
+int				down_move(t_map *map, int keycode);
+int				right_move(t_map *map, int keycode);
 
 #endif

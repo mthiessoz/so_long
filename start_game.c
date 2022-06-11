@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:03:09 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/11 15:29:28 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/11 16:51:25 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	start_game(t_map *map, char *s)
 		return (EXIT_FAILURE);
 	img_init(map);
 	map_init(map);
-	check_errors(map, s);
+	if (check_errors(map, s) == 1)
+		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
