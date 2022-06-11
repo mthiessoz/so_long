@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:48:40 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/08 18:49:13 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:28:40 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ int	main(int argc, char **argv)
 		write(1, "NB_ARG_ERROR\n", 7);
 		return (0);
 	}
-	read_map(&map, &argv[1]);
-	check_errors(&map, argv[1]);
 	map.mlx = mlx_init();
-	map.win = mlx_new_window(map.mlx, 300, 300, "Hello world!");
-	map_load(&map);
+	if (start_game(&map, argv[1]) == 1)
+		return (EXIT_FAILURE);
+	map.win = mlx_new_window(map.mlx, ((map.len_line - 1) * 32), (map.nb_line_map * 32), "Snow Pumpkin");
+	create_map(&map);
+	//map_load(&map);
 	mlx_hook(map.win, 2, 1L << 0, ft_close, &map);
 	mlx_loop(map.mlx);
+	exit_game(&map);
 }

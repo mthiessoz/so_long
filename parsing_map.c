@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:23:44 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/05 18:07:30 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:24:14 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	nb_line_map(char **map_name)
 	return (nb_line_map);
 }
 
-void	read_map(t_map *vars, char **map_name)
+int	read_map(t_map *vars, char **map_name)
 {
 	int		i;
 	int		fd;
@@ -36,6 +36,11 @@ void	read_map(t_map *vars, char **map_name)
 	fd = open(*map_name, O_RDONLY);
 	i = 0;
 	vars->nb_line_map = nb_line_map(map_name);
+	if (vars->nb_line_map == 0)
+	{
+		write (1, "EMPTY_MAP_ERROR\n", 16);
+		return (EXIT_FAILURE);
+	}
 	vars->tableau = malloc(sizeof(char *) * vars->nb_line_map);
 	while (i < vars->nb_line_map)
 	{
@@ -44,4 +49,5 @@ void	read_map(t_map *vars, char **map_name)
 		i++;
 	}
 	close(fd);
+	return (EXIT_SUCCESS);
 }
