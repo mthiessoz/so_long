@@ -6,13 +6,13 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:18:32 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/11 16:42:59 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:47:59 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	exit_game(t_map *map)
+int	exit_game(t_map *map)
 {
 	free(map->wall);
 	free(map->snow);
@@ -20,4 +20,5 @@ void	exit_game(t_map *map)
 	free(map->coin);
 	free(map->cd_exit);
 	free(map->op_exit);
+	exit(0);
 }

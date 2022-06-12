@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:31:41 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/05 19:05:49 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/12 19:12:37 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ int	player_error(t_map *vars)
 	if (non_unique_error(vars, 'P') != 1)
 	{
 		write(1, "PLAYER_ERROR\n", 14);
+		return (EXIT_FAILURE);
+	}
+	else
+		return (0);
+}
+
+int	item_error(t_map *vars)
+{
+	vars->coin_number = non_unique_error(vars, 'C');
+	if (non_unique_error(vars, 'C') < 1)
+	{
+		write(1, "ITEM_ERROR\n", 12);
 		return (EXIT_FAILURE);
 	}
 	else

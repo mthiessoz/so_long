@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:14:10 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/11 16:50:35 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:52:19 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	check_errors(t_map *vars, char *tmp)
 	if (player_error(vars) == 1)
 		return (EXIT_FAILURE);
 	if (exit_error(vars) == 1)
+		return (EXIT_FAILURE);
+	if (item_error(vars) == 1)
 		return (EXIT_FAILURE);
 	if (rectangle_error(vars) == 1)
 		return (EXIT_FAILURE);

@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 23:43:51 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/11 17:29:25 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:46:10 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_map
 	int		nb_line_map;
 	int		map_len;
 	int		len_line;
+	int		coin_number;
 	t_img	*wall;
 	t_img	*snow;
 	t_img	*perso;
@@ -53,7 +54,7 @@ void			map_load(t_map *map);
 int				start_game(t_map *map, char *s);
 void			img_init(t_map *map);
 void			map_init(t_map *map);
-void			exit_game(t_map *map);
+int				exit_game(t_map *map);
 void			create_map(t_map *map);
 void			what_img(t_map *map, char c, int x, int y);
 int				where_to_go(int keycode, t_map *map);
@@ -69,5 +70,7 @@ int				up_move(t_map *map, int keycode);
 int				left_move(t_map *map, int keycode);
 int				down_move(t_map *map, int keycode);
 int				right_move(t_map *map, int keycode);
+int				check_move(t_map *map, int move_x, int move_y);
+int				item_error(t_map *vars);
 
 #endif
