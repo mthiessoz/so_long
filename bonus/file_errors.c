@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:57:49 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 12:10:46 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:06:38 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,16 @@ int	not_map_symbol(t_map *map)
 			}
 		}
 		i++;
+	}
+	return (EXIT_SUCCESS);
+}
+
+int	size_map(t_map *map)
+{
+	if (map->nb_line_map > 40 || map->len_line > 70)
+	{
+		write (1, "MAP_TOO_BIG\n", 12);
+		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
 }

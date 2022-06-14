@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:51:10 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 10:41:21 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:21:55 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	nb_step(t_map *map)
 		map->wall->img_name, map->len_line * 16, 0);
 	mlx_string_put(map->mlx, map->win, map->len_line * 16, 16,
 		0x99FC0932, step);
-	write(1, "nb_step : ", 12);
+	write(1, "nb_step : ", 11);
 	while (step[i])
 	{
 		write(1, &step[i], 1);

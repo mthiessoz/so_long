@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 23:43:51 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 11:38:19 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:40:15 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ int				right_move(t_map *map);
 int				check_move(t_map *map, int move_x, int move_y);
 int				item_error(t_map *vars);
 int				not_map_symbol(t_map *map);
+int				size_map(t_map *map);
 
 #endif

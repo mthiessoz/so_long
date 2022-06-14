@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:14:10 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 11:52:21 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:40:36 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	check_errors(t_map *vars)
 	if (walls_errors(vars) == 1)
 		return (EXIT_FAILURE);
 	if (not_map_symbol(vars) == 1)
+		return (EXIT_FAILURE);
+	if (size_map(vars))
 		return (EXIT_FAILURE);
 	else
 		return (EXIT_SUCCESS);

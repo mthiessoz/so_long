@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:51:10 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 12:16:17 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:16:48 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	nb_step(t_map *map)
 
 	i = 0;
 	step = ft_itoa(map->step);
-	write(1, "nb_step : ", 12);
+	write(1, "nb_step : ", 11);
 	while (step[i])
 	{
 		write(1, &step[i], 1);
