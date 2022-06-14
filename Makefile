@@ -6,11 +6,14 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 15:31:22 by mthiesso          #+#    #+#              #
-#    Updated: 2022/06/12 14:51:00 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/06/14 10:36:53 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ----------------- Sources -----------------
+BONUS				=		bonus/main.c bonus/parsing_map.c bonus/map_errors.c bonus/file_errors.c \
+								bonus/check_errors.c bonus/check_walls.c bonus/map_loading.c bonus/map_init.c \
+								bonus/start_game.c bonus/exit.c bonus/move.c bonus/check_move.c
 SOLONG				=        main.c parsing_map.c map_errors.c file_errors.c check_errors.c check_walls.c \
 								map_loading.c map_init.c start_game.c exit.c move.c check_move.c
 LIB					=        ./libft/libft.a
@@ -20,7 +23,9 @@ MINILBX				=        -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 # ---------------- OBJS & Sources -----------
 SRC_SOLONG			=        $(SOLONG)
+SRC_BONUS			=		 $(BONUS)
 OBJS_SOLONG			=        $(SRC_SOLONG:.c=.o)
+OBJS_BONUS			=		 $(SRC_BONUS:.c=.o)
 
 # ---------------- Name && GCC --------------
 NAME				=        so_long
@@ -50,12 +55,18 @@ start:
 		@$(LIBFT_MLX)
 
 so_long: $(OBJS_SOLONG)
-		@$(GCC) $(FLAGS) -o $(NAME) $(OBJS_SOLONG) $(LIB) $(MINILBX)
+		@$(GCC) $(FLAGS) -o $(NAME) $(SOLONG) $(LIB) $(MINILBX)
 		@$(LIBX)
 		@$(COMPOK)
 
+bonus:	 start $(OBJS_BONUS) 
+		 @$(GCC) $(BONUS) $(LIB) $(MINILBX) $(FLAGS) -o $(NAME)
+		 @$(LIBX)
+		 @$(COMPOK)
+
 clean:
 		rm -rf $(OBJS_SOLONG)
+		rm -rf $(OBJS_BONUS)
 		cd libft && make clean
 		cd mlx && make clean
 		@$(CLEAN_)

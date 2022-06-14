@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 23:43:51 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 12:14:43 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:38:19 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "./libft/libft.h"
-# include "./mlx/mlx.h"
+# include "../libft/libft.h"
+# include "../mlx/mlx.h"
 
 typedef struct s_img
 {

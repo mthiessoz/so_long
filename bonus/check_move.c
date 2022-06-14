@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:51:10 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 12:16:17 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:41:21 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	check_move(t_map *map, int move_x, int move_y)
 		map->tableau[(map->perso->img_y / 32) + move_y]
 		[(map->perso->img_x / 32) + move_x] = '0';
 		map->coin_number--;
+		if (map->coin_number == 0)
+			mlx_put_image_to_window(map->mlx, map->win, map->op_exit->img_name,
+				map->op_exit->img_x, map->op_exit->img_y);
 	}
 	return (1);
 }
@@ -42,6 +45,10 @@ void	nb_step(t_map *map)
 
 	i = 0;
 	step = ft_itoa(map->step);
+	mlx_put_image_to_window(map->mlx, map->win,
+		map->wall->img_name, map->len_line * 16, 0);
+	mlx_string_put(map->mlx, map->win, map->len_line * 16, 16,
+		0x99FC0932, step);
 	write(1, "nb_step : ", 12);
 	while (step[i])
 	{
