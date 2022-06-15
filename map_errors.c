@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:31:41 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/13 21:17:53 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:27:10 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	player_error(t_map *vars)
 {
 	if (non_unique_error(vars, 'P') != 1)
 	{
-		write(1, "PLAYER_ERROR\n", 14);
+		write(1, "Error:\nPLAYER_ERROR\n", 21);
 		return (EXIT_FAILURE);
 	}
 	else
@@ -52,7 +52,7 @@ int	item_error(t_map *vars)
 	vars->coin_number = non_unique_error(vars, 'C');
 	if (non_unique_error(vars, 'C') < 1)
 	{
-		write(1, "ITEM_ERROR\n", 12);
+		write(1, "Error:\nITEM_ERROR\n", 19);
 		return (EXIT_FAILURE);
 	}
 	else
@@ -63,7 +63,7 @@ int	exit_error(t_map *vars)
 {
 	if (non_unique_error(vars, 'E') != 1)
 	{
-		write(1, "EXIT_ERROR\n", 12);
+		write(1, "Error:\nEXIT_ERROR\n", 19);
 		return (EXIT_FAILURE);
 	}
 	else
@@ -82,7 +82,7 @@ int	rectangle_error(t_map *vars)
 			+ (ft_strichr(vars->tableau[i], '\n') == -1)
 			!= (unsigned long)vars->len_line)
 		{
-			write(1, "NOT_RECTANGLE_MAP_ERROR\n", 24);
+			write(1, "Error:\nNOT_RECTANGLE_MAP_ERROR\n", 31);
 			return (EXIT_FAILURE);
 		}
 		i++;

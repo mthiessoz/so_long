@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:48:40 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 11:03:30 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:28:15 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	map.step = 0;
 	if (argc != 2)
 	{
-		write(1, "NB_ARG_ERROR\n", 7);
+		write(1, "Error:\nNB_ARG_ERROR\n", 20);
 		return (EXIT_FAILURE);
 	}
 	if (read_map(&map, &argv[1]) == 1)

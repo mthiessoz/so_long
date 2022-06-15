@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:57:49 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 15:06:38 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:22:43 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	extension_errors(char *map_name)
 	if (map_name[map_len - 1] != 'r' || map_name[map_len - 2] != 'e'
 		|| map_name[map_len - 3] != 'b' || map_name[map_len - 4] != '.')
 	{			
-		write(1, "MAP_FILE_ERROR\n", 15);
+		write(1, "Error:\nMAP_FILE_ERROR\n", 22);
 		return (EXIT_FAILURE);
 	}
 	return (0);
@@ -44,7 +44,7 @@ int	not_map_symbol(t_map *map)
 				j++;
 			else
 			{
-				write(1, "WRONG_SYMBOL_MAP\n", 17);
+				write(1, "Error:\nWRONG_SYMBOL_MAP\n", 24);
 				return (EXIT_FAILURE);
 			}
 		}
@@ -55,9 +55,9 @@ int	not_map_symbol(t_map *map)
 
 int	size_map(t_map *map)
 {
-	if (map->nb_line_map > 40 || map->len_line > 70)
+	if (map->nb_line_map > 30 || map->len_line > 50)
 	{
-		write (1, "MAP_TOO_BIG\n", 12);
+		write (1, "Error:\nMAP_TOO_BIG\n", 19);
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
