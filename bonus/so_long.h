@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 23:43:51 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 14:40:15 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:21:58 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_map
 	t_img	*coin;
 	t_img	*cd_exit;
 	t_img	*op_exit;
+	t_img	*monster;
 }				t_map;
 
 int				read_map(t_map *vars, char **map);

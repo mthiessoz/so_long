@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 22:04:37 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/13 21:15:21 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:30:36 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,7 @@ void	what_img(t_map *map, char c, int x, int y)
 		mlx_put_image_to_window(map->mlx, map->win,
 			map->cd_exit->img_name, x, y);
 	}
+	else if (c == 'M')
+		mlx_put_image_to_window(map->mlx, map->win,
+			map->monster->img_name, x, y);
 }

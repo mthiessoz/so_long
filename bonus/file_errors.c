@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:57:49 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/15 16:22:43 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:27:36 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	not_map_symbol(t_map *map)
 		{
 			symbol = map->tableau[i][j];
 			if (symbol == '1' || symbol == 'E' || symbol == '0'
-				|| symbol == 'C' || symbol == 'P' || symbol == '\n')
+				|| symbol == 'C' || symbol == 'P' || symbol == 'M'
+				|| symbol == '\n')
 				j++;
 			else
 			{

@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:51:10 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 14:21:55 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:34:33 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int	check_move(t_map *map, int move_x, int move_y)
 	if ((map->tableau[(map->perso->img_y / 32) + move_y]
 			[(map->perso->img_x / 32) + move_x]) == '1')
 		return (0);
-	else if ((map->tableau[(map->perso->img_y / 32) + move_y]
-			[(map->perso->img_x / 32) + move_x]) == 'E'
-		&& map->coin_number == 0)
+	else if (((map->tableau[(map->perso->img_y / 32) + move_y]
+				[(map->perso->img_x / 32) + move_x]) == 'E'
+			&& map->coin_number == 0) || (map->tableau[(map->perso->img_y / 32)
+				+ move_y][(map->perso->img_x / 32) + move_x]) == 'M')
 		exit_game(map);
 	else if ((map->tableau[(map->perso->img_y / 32) + move_y]
 			[(map->perso->img_x / 32) + move_x]) == 'E'

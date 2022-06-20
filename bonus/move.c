@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 16:34:01 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 10:45:56 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:41:32 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ int	where_to_go(int keycode, t_map *map)
 int	up_move(t_map *map)
 {
 	if (check_move(map, 0, -1) == 0)
-	{
-		mlx_put_image_to_window(map->mlx, map->win, map->wall->img_name,
-			(map->perso->img_x), (map->perso->img_y - 32));
 		return (0);
-	}
 	else
 	{
 		mlx_put_image_to_window(map->mlx, map->win, map->snow->img_name,

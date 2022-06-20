@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:08:44 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/13 21:06:53 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:23:36 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	img_init(t_map *map)
 			map->cd_exit->img_path = "asset/cd_exit.xpm";
 			map->op_exit = malloc(sizeof(t_img));
 			map->op_exit->img_path = "asset/op_exit.xpm";
+			map->monster = malloc(sizeof(t_img));
+			map->monster->img_path = "asset/monster.xpm";
 }
 
 void	map_init(t_map *map)
@@ -44,4 +46,7 @@ void	map_init(t_map *map)
 	map->op_exit->img_name = mlx_xpm_file_to_image(map->mlx,
 			map->op_exit->img_path, &map->op_exit->img_width,
 			&map->op_exit->img_height);
+	map->monster->img_name = mlx_xpm_file_to_image(map->mlx,
+			map->monster->img_path, &map->monster->img_width,
+			&map->monster->img_height);
 }

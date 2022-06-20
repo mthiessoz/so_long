@@ -6,7 +6,7 @@
 /*   By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:23:44 by mthiesso          #+#    #+#             */
-/*   Updated: 2022/06/14 10:56:59 by mthiesso         ###   ########.fr       */
+/*   Updated: 2022/06/16 19:55:02 by mthiesso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ int	read_map(t_map *vars, char **map_name)
 	if (extension_errors(*map_name) == 1)
 		return (EXIT_FAILURE);
 	fd = open(*map_name, O_RDONLY);
-	i = 0;
+	i = -1;
 	vars->nb_line_map = nb_line_map(map_name);
 	if (vars->nb_line_map == 0)
 	{
-		write (1, "EMPTY_MAP_ERROR\n", 16);
+		write (2, "Error:\nEMPTY_MAP\n", 17);
 		return (EXIT_FAILURE);
 	}
 	vars->tableau = malloc(sizeof(char *) * vars->nb_line_map);
-	while (i < vars->nb_line_map)
+	while (++i < vars->nb_line_map)
 	{
 		line = get_next_line(fd);
-		vars->tableau[i] = line;
-		i++;
+		vars->tableau[i] = ft_strdup(line);
+		free(line);
 	}
 	close(fd);
 	if (check_errors(vars))

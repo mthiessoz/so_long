@@ -6,7 +6,7 @@
 #    By: mthiesso <mthiesso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 15:31:22 by mthiesso          #+#    #+#              #
-#    Updated: 2022/06/14 14:14:17 by mthiesso         ###   ########.fr        #
+#    Updated: 2022/06/16 20:56:17 by mthiesso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,7 @@ OBJS_BONUS			=		 $(SRC_BONUS:.c=.o)
 # ---------------- Name && GCC --------------
 NAME				=        so_long
 GCC					=        gcc
-FLAGS				=        -Wall -Wextra -Werror -Imlx -g3 -fsanitize=address -fno-omit-frame-pointer
-
+CFLAGS				=        -Wall -Wextra -Werror -Imlx -g
 # ---------------- Couleurs -----------------
 GREEN				=        \033[1;32m
 RED					=        \033[1;31m
@@ -55,12 +54,12 @@ start:
 		@$(LIBFT_MLX)
 
 so_long: $(OBJS_SOLONG)
-		@$(GCC) $(FLAGS) -o $(NAME) $(SOLONG) $(LIB) $(MINILBX)
+		@$(GCC) $(CFLAGS) -o $(NAME) $(SOLONG) $(LIB) $(MINILBX)
 		@$(LIBX)
 		@$(COMPOK)
 
 bonus:	 start $(OBJS_BONUS) 
-		 @$(GCC) $(BONUS) $(LIB) $(MINILBX) $(FLAGS) -o $(NAME)
+		 @$(GCC) $(CFLAGS) -o $(NAME) $(BONUS) $(LIB) $(MINILBX)
 		 @$(LIBX)
 		 @$(COMPOK)
 
